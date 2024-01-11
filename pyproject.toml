@@ -1,0 +1,41 @@
+[tool.black]
+py36 = true
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+	| migrations
+    # The following are specific to Black, you probably don't want those.
+    | blib2to3
+    | tests/data
+)/
+'''
+
+
+[tool.poetry]
+name = "edu_cms_api"
+version = "0.1.0"
+description = "An Educational Content Management System API built with Django, enabling course creation, student enrollment, quiz administration, and progress tracking for an interactive learning experience."
+authors = ["Javid \"JAXA\" Khasizada"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Django = "~4.2"
+djangorestframework = "~3.14"
+requests = "~2.31"
+python-dotenv = "1.0.0"
+pre-commit = "^3.5"
+mypy = "~1.8"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
