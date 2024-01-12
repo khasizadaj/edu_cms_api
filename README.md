@@ -9,7 +9,7 @@ Educational Content Management System API is built with Django, designed for cou
 
 ### Dependencies
 
-- `Dajngo` and `djangorestframwework` for building the API
+- `Django` and `djangorestframwework` for building the API
 - `poetry` for managing dependencies
 - `mypy` static typing
 - `flake8` for linting
