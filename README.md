@@ -25,7 +25,7 @@ The project uses `black` for code formatting and `flake8` for linting, integrate
 
 1. **Clone the Repository**
    ```bash
-   git clone [your-repository-url]
+   git clone git@github.com:khasizadaj/edu_cms_api.git
    ```
 
 2. **Install Dependencies**
