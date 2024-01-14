@@ -29,9 +29,16 @@ The project uses `black` for code formatting and `flake8` for linting, integrate
    ```
 
 2. **Install Dependencies**
+
+   *Note*: This step expects `poetry` library to be installed at global scope.
+
    ```bash
    # in: edu_cms_api
-   poetry install
+   python3 -m poetry install
+
+   # or
+    
+   python -m poetry install
    ```
 
 3. **Environment Setup**
@@ -40,29 +47,33 @@ The project uses `black` for code formatting and `flake8` for linting, integrate
    # Edit .env to set your environment variables
    ```
 
-4. **Install Pre-commit Hooks**
+4. Activate environment
+   ```bash
+   python3 -m poetry shell
+
+   # or
+    
+   python -m poetry shell
+   ```
+
+5. **Install Pre-commit Hooks**
    ```bash
    pre-commit install
    ```
 
-5. Activate environment
-    ```bash
-    poetry shell
-    ```
-
-5. **Database Migrations**:
+6. **Database Migrations**:
    ```bash
    # in: src
-   python manage.py migrate
+   make migrate
    ```
 
-6. **Run the Server**:
+7. **Run the Server**:
    ```bash
    # in: src
-   python manage.py runserver
+   make run
    ```
 
-7. **Access the API**:
+8. **Access the API**:
    Available at `http://127.0.0.1:8000/`.
 
 ## Contributing
