@@ -6,8 +6,9 @@ run:
 
 help:
 	@echo "--------------- HELP ---------------"
-	@echo "To run localserver -> make run"
 	@echo "To install the project -> make install"
+	@echo "To get help -> make help"
+	@echo "To run localserver -> make run"
 	@echo "To test the project -> make test"
 	@echo "------------------------------------"
 
