@@ -34,7 +34,11 @@ The project uses `black` for code formatting and `flake8` for linting, integrate
 
    ```bash
    # in: edu_cms_api
-   poetry install
+   python3 -m poetry install
+
+   # or
+    
+   python -m poetry install
    ```
 
 3. **Environment Setup**
@@ -44,9 +48,13 @@ The project uses `black` for code formatting and `flake8` for linting, integrate
    ```
 
 4. Activate environment
-    ```bash
-    poetry shell
-    ```
+   ```bash
+   python3 -m poetry shell
+
+   # or
+    
+   python -m poetry shell
+   ```
 
 5. **Install Pre-commit Hooks**
    ```bash
