@@ -10,10 +10,14 @@ help:
 	@echo "To get help -> make help"
 	@echo "To run localserver -> make run"
 	@echo "To test the project -> make test"
+	@echo "To migrate database -> make migrate"
 	@echo "------------------------------------"
 
 install:
 	poetry install
+
+migrate:
+	python src/manage.py migrate
 
 test:
 	python src/manage.py test
