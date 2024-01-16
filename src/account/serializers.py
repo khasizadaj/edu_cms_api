@@ -9,7 +9,6 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         model = User
         fields = ["url", "username", "email", "groups"]
         extra_exclude = ("user_permissions",)
-        lookup_field = "username"
 
 
 class GroupSerializer(serializers.HyperlinkedModelSerializer):
@@ -18,7 +17,6 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Group
         fields = ["url", "name"]
-        lookup_field = "name"
 
 
 class PermissionSerializer(serializers.HyperlinkedModelSerializer):
