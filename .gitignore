@@ -61,9 +61,9 @@ cover/
 
 # Django stuff:
 *.log
-local_settings.py
+src/local_settings.py
 src/db.sqlite3
-db.sqlite3-journal
+src/db.sqlite3-journal
 
 
 # Flask stuff:
