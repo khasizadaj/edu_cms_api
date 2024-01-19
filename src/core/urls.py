@@ -21,5 +21,6 @@ from account.urls import router
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("v1/", include((router.urls, "v1"), namespace="v1")),
+    path("v2/", include(("account.urls", "v2"), namespace="v2")),
     path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
 ]

@@ -1,6 +1,37 @@
-from rest_framework import viewsets, permissions
+from rest_framework import authentication, viewsets, permissions
+from rest_framework.views import APIView
+from rest_framework.request import Request
+from rest_framework.response import Response
 from django.contrib.auth.models import Group, Permission, User
-from .serializers import GroupSerializer, PermissionSerializer, UserSerializer
+from .serializers import (
+    UserSerializerFromModel,
+    UserSerializerFromScratch,
+    GroupSerializer,
+    PermissionSerializer,
+    UserSerializer,
+)
+
+
+class UsersListFromScratch(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+    authentication_classes = [authentication.BasicAuthentication]
+
+    def get(self, request: Request) -> Response:
+        queryset = User.objects.all()
+        serializer = UserSerializerFromScratch(queryset, many=True)
+        return Response(serializer.data)
+
+
+class UsersListFromModel(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+    authentication_classes = [authentication.BasicAuthentication]
+
+    def get(self, request: Request) -> Response:
+        queryset = User.objects.all()
+        serializer = UserSerializerFromModel(
+            queryset, many=True, context={"request": request}
+        )
+        return Response(serializer.data)
 
 
 class UserViewSet(viewsets.ModelViewSet):
